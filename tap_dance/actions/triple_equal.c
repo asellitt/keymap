@@ -1,4 +1,3 @@
-//instanalize an instance of 'tap' for the Dot - Comma tap dance.
 static tap triple_equal_state = {
   .is_press_action = true,
   .state           = 0
