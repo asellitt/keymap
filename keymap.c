@@ -24,6 +24,7 @@
 #include "keymap_estonian.h"
 #include "keymap_belgian.h"
 #include "keymap_us_international.h"
+#include "quantum.h"
 #include "macros.h"
 
 #define KC_MAC_UNDO LGUI(KC_Z)
@@ -46,6 +47,9 @@ enum custom_keycodes {
   RGB_SLD = EZ_SAFE_RANGE,
   M_ROCKET,
   M_DEVCC,
+  QNTM_1,
+  QNTM_2,
+  QNTM_3,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -117,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * Keymap: Layer 2, Macros
    *
    * ,--------------------------------------------------.      ,--------------------------------------------------.
-   * |        |      |      |      |      |      |      |      |      |      |      |      |      |      | Reset  |
+   * |        |QNTM_1|QNTM_2|QNTM_3|      |      |      |      |      |      |      |      |      |      | Reset  |
    * |--------+------+------+------+------+-------------|      |------+------+------+------+------+------+--------|
    * |        |      |      |      |      |      |      |      |      |      |      |      |      |      |        |
    * |--------+------+------+------+------+------|      |      |      |------+------+------+------+------+--------|
@@ -136,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *                                 `--------------------'  `--------------------'
    */
   [2] = LAYOUT_ergodox_pretty(
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,/**/KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RESET,
+    KC_TRNS, QNTM_1,  QNTM_2,  QNTM_3,  KC_TRNS, KC_TRNS, KC_TRNS,/**/KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RESET,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,/**/KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,         /**/         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,/**/KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -150,6 +154,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
+    case QNTM_1:
+      if (record->event.pressed) QUANTUM_1;
+      break;
+    case QNTM_2:
+      if (record->event.pressed) QUANTUM_2;
+      break;
+    case QNTM_3:
+      if (record->event.pressed) QUANTUM_3;
+      break;
     case M_ROCKET:
       if (record->event.pressed) MACRO_ROCKET;
       break;
