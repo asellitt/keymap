@@ -24,8 +24,8 @@
 #include "keymap_estonian.h"
 #include "keymap_belgian.h"
 #include "keymap_us_international.h"
-#include "quantum.h"
-#include "macros.h"
+#include "keymap_macros.h"
+#include "keymap_quantum.h"
 
 #define KC_MAC_UNDO LGUI(KC_Z)
 #define KC_MAC_CUT LGUI(KC_X)
