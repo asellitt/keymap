@@ -25,7 +25,7 @@
 #include "keymap_belgian.h"
 #include "keymap_us_international.h"
 
-#include "macros/macros.h"
+#include "macros/macros.c"
 #include "tap_dance/tap_dances.c"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -126,27 +126,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         KC_TRNS, KC_TRNS, KC_TRNS,/**/KC_TRNS, KC_TRNS, KC_TRNS
   ),
 };
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
-    case QNTM_1:
-      if (record->event.pressed) QUANTUM_1;
-      break;
-    case QNTM_2:
-      if (record->event.pressed) QUANTUM_2;
-      break;
-    case QNTM_3:
-      if (record->event.pressed) QUANTUM_3;
-      break;
-    case M_ROCKET:
-      if (record->event.pressed) MACRO_ROCKET;
-      break;
-    case M_DEVCC:
-      if (record->event.pressed) MACRO_DEV_CREDIT_CARD;
-      break;
-  }
-  return true;
-}
 
 uint32_t layer_state_set_user(uint32_t state) {
   uint8_t layer = biton32(state);
