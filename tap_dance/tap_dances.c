@@ -23,10 +23,9 @@ enum tap_dances { //-----------------------------------------------------//
 
 // Register the double tap dances:
 qk_tap_dance_action_t tap_dance_actions[] = {
-  [THREEQL] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, triple_equal_finished, triple_equal_reset, DANCING_TERM),
-  [THREGRV] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, triple_grave_finished, triple_grave_reset, DANCING_TERM),
-  [XCUT] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, x_cut_finished, x_cut_reset, DANCING_TERM),
-  [CCPY] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, c_copy_finished, c_copy_reset, DANCING_TERM),
-  [VPST] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, v_paste_finished, v_paste_reset, DANCING_TERM),
+  [THREEQL] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, triple_equal_finished, triple_equal_reset, DANCING_TAP_DELAY),
+  [THREGRV] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, triple_grave_finished, triple_grave_reset, DANCING_HOLD_DELAY),
+  [XCUT] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, x_cut_finished, x_cut_reset, DANCING_HOLD_DELAY),
+  [CCPY] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, c_copy_finished, c_copy_reset, DANCING_HOLD_DELAY),
+  [VPST] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, v_paste_finished, v_paste_reset, DANCING_HOLD_DELAY),
 };
-

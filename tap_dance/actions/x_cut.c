@@ -11,7 +11,7 @@ void x_cut_finished(qk_tap_dance_state_t *state, void *user_data) {
       break;
 
     case SINGLE_HOLD:
-      SEND_STRING(SS_LGUI(SS_TAP(X_X)));
+      SEND_STRING(SS_LCTL("x"));
       break;
   }
 }
