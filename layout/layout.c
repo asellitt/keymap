@@ -83,8 +83,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS       , KC_F1         , KC_F2         , KC_F3         , KC_F4         , KC_F5         , KC_TRNS      ,
     //               |               |               |               |               |               |              |
     //---------------.---------------.---------------.---------------.---------------.---------------.--------------.
-    // VOLUME UP     |               | UP            |               |               |               | NEXT TRACK   |
-       KC_VOLU       , KC_TRNS       , KC_UP         , KC_TRNS       , KC_TRNS       , KC_TRNS       , KC_MNXT      ,
+    // VOLUME UP     |               | UP            |               |               |               | PREV TRACK   |
+       KC_VOLU       , KC_TRNS       , KC_UP         , KC_TRNS       , KC_TRNS       , KC_TRNS       , KC_MPRV      ,
     //               |               |               |               |               |               |              |
     //---------------.---------------.---------------.---------------.---------------.---------------|              |
     // MUTE          | LEFT          | DOWN          | RIGHT         |               |               |______________|
@@ -118,8 +118,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        M_DEVCC      , KC_F6         , KC_F7         , KC_F8         , KC_F9         , KC_F10        , KC_TRNS       ,
     //              |               |               |               |               |               |               |
     //--------------.---------------.---------------.---------------.---------------.---------------.---------------.
-    // PREV TRACK   | MOUSE WH UP   | MOUSE UP      | MOUSE WH DOWN |               |               |               |
-       KC_MPRV      , KC_WH_U       , KC_MS_U       , KC_WH_D       , KC_TRNS       , KC_TRNS       , KC_TRNS       ,
+    // NEXT TRACK   | MOUSE WH UP   | MOUSE UP      | MOUSE WH DOWN |               |               |               |
+       KC_MNXT      , KC_WH_U       , KC_MS_U       , KC_WH_D       , KC_TRNS       , KC_TRNS       , KC_TRNS       ,
     //              |               |               |               |               |               |               |
     //              .---------------|---------------.---------------.---------------.---------------.---------------.
     //______________| MOUSE LEFT    | MOUSE DOWN    | MOUSE RIGHT   |               |               | LAYER 2       |
