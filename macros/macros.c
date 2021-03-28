@@ -6,6 +6,7 @@ enum {
   QNTM_1,
   QNTM_2,
   QNTM_3,
+  QNTM_4,
 };
 
 void blink_board_led(keyrecord_t *record) {
@@ -28,6 +29,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case QNTM_3:
       if (record->event.pressed) QUANTUM_3;
+      break;
+    case QNTM_4:
+      if (record->event.pressed) QUANTUM_4;
       break;
     case M_ROCKET:
       if (record->event.pressed) MACRO_ROCKET;

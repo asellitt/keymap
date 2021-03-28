@@ -155,7 +155,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT_ergodox(
     //---------------.---------------.---------------.---------------.---------------.---------------.--------------.
     //               | QUANTUM 1     | QUANTUM 2     | QUANTUM 3     |               |               |              |
-       KC_TRNS       , QNTM_1        , QNTM_2        , QNTM_3        , KC_TRNS       , KC_TRNS       , KC_TRNS      ,
+       KC_TRNS       , QNTM_1        , QNTM_4        , QNTM_3        , KC_TRNS       , KC_TRNS       , KC_TRNS      ,
     //               |               |               |               |               |               |              |
     //---------------.---------------.---------------.---------------.---------------.---------------.--------------.
     //               |               |               |               |               |               |              |
