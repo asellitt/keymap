@@ -4,6 +4,7 @@ enum {
   M_ROCKET = EZ_SAFE_RANGE,
   M_DEVCC,
   M_GMUTE,
+  M_GHAPPROVE,
   QNTM_1,
   QNTM_2,
   QNTM_3,
@@ -42,6 +43,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case M_GMUTE:
       if (record->event.pressed) MACRO_GLOBAL_MUTE;
+      break;
+    case M_GHAPPROVE:
+      if (record->event.pressed) MACRO_GITHUB_APPROVE;
       break;
   }
   return true;
