@@ -1,7 +1,11 @@
 #include "macros.h"
 
 enum {
-  M_ROCKET = EZ_SAFE_RANGE,
+  MODE_TOGGLE = EZ_SAFE_RANGE,
+  MODE_REPORT,
+  MODE_CTRL,
+  MODE_GUI,
+  M_ROCKET,
   M_DEVCC,
   M_GMUTE,
   M_GHAPPROVE,
@@ -19,10 +23,78 @@ void blink_board_led(keyrecord_t *record) {
   }
 }
 
+bool is_osx_mode = true;
+void toggle_mode(void);
+void toggle_mode() {
+  is_osx_mode = !is_osx_mode;
+}
+
+void report_mode(void);
+void report_mode() {
+  if(is_osx_mode) {
+    SEND_STRING("Mode: OSX");
+  }
+  else {
+    SEND_STRING("Mode: WIN");
+  }
+}
+
+void mode_aware_control(keyrecord_t *record);
+void mode_aware_control(keyrecord_t *record) {
+  if(is_osx_mode) {
+    if(record->event.pressed) {
+      SEND_STRING(SS_DOWN(X_LCTL));
+    }
+    else {
+      SEND_STRING(SS_UP(X_LCTL));
+    }
+  }
+  else {
+    if(record->event.pressed) {
+      SEND_STRING(SS_DOWN(X_LGUI));
+    }
+    else {
+      SEND_STRING(SS_UP(X_LGUI));
+    }
+  }
+}
+
+void mode_aware_gui(keyrecord_t *record);
+void mode_aware_gui(keyrecord_t *record) {
+  if(is_osx_mode) {
+    if(record->event.pressed) {
+      SEND_STRING(SS_DOWN(X_LGUI));
+    }
+    else {
+      SEND_STRING(SS_UP(X_LGUI));
+    }
+  }
+  else {
+    if(record->event.pressed) {
+      SEND_STRING(SS_DOWN(X_LCTL));
+    }
+    else {
+      SEND_STRING(SS_UP(X_LCTL));
+    }
+  }
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   blink_board_led(record);
 
   switch (keycode) {
+    case MODE_TOGGLE:
+      if (record->event.pressed) toggle_mode();
+      break;
+    case MODE_REPORT:
+      if (record->event.pressed) report_mode();
+      break;
+    case MODE_CTRL:
+      mode_aware_control(record);
+      break;
+    case MODE_GUI:
+      mode_aware_gui(record);
+      break;
     case QNTM_1:
       if (record->event.pressed) QUANTUM_1;
       break;

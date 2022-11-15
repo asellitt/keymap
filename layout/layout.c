@@ -20,8 +20,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_LSFT       , KC_Z          , KC_X          , KC_C          , KC_V          , KC_B          , M_ROCKET     ,
     //               |               |               |               |               |               |              |
     //---------------.---------------.---------------.---------------.---------------.---------------.--------------.
-    // LAYER 1       |               | LEFT          | RIGHT         | CONTROL       |
-       MO(1)         , KC_TRNS       , KC_LEFT       , KC_RGHT       , KC_LCTL       ,
+    // LAYER 1       |               | LEFT          | RIGHT         | GUI           |
+       MO(1)         , KC_TRNS       , KC_LEFT       , KC_RGHT       , MODE_GUI      ,
     //               |               |               |               |               |
     //---------------.---------------.---------------.---------------.---------------.
     //                                                                               .---------------.--------------.
@@ -33,8 +33,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                                        KC_LALT      ,
     //                                                               |               |               |              |
     //                                                               |               |               |--------------.
-    //                                                               |               |               | SUPER        |
-                                                                       KC_BSPC       , KC_DEL        , LGUI_T(KC_NO),
+    //                                                               |               |               | CTRL         |
+                                                                       KC_BSPC       , KC_DEL        , MODE_CTRL    ,
     //                                                               |               |               |              |
     //                                                               .---------------.---------------.--------------.
 
@@ -55,8 +55,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_COLN      , KC_N          , KC_M          , KC_COMM       , KC_DOT        , KC_SLSH       , KC_RSFT       ,
     //              |               |               |               |               |               |               |
     //--------------.---------------.---------------.---------------.---------------.---------------.---------------.
-    //                              | CONTROL       | UP            | DOWN          |               | LAYER 1       |
-                                      KC_RCTL       , KC_UP         , KC_DOWN       , KC_TRNS       , MO(1)         ,
+    //                              | GUI           | UP            | DOWN          |               | LAYER 1       |
+                                      MODE_GUI      , KC_UP         , KC_DOWN       , KC_TRNS       , MO(1)         ,
     //                              |               |               |               |               |               |
     //                              .---------------.---------------.---------------.---------------.---------------.
     //--------------.---------------.
@@ -68,8 +68,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_RALT                                      ,
     //              |               |               |
     //--------------|               |               |
-    // SUPER        |               |               |
-       RGUI_T(KC_NO), KC_ENT        , KC_SPC
+    // CTRL         |               |               |
+       MODE_CTRL    , KC_ENT        , KC_SPC
     //              |               |               |
     //--------------.---------------.---------------.
   ),
@@ -80,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [1] = LAYOUT_ergodox(
     //---------------.---------------.---------------.---------------.---------------.---------------.--------------.
     // GLOBAL MUTE   | F1            | F2            | F3            | F4            | F5            |              |
-       M_GMUTE       , KC_F1         , KC_F2         , KC_F3         , KC_F4         , KC_F5         , KC_TRNS      ,
+       M_GMUTE       , KC_F1         , KC_F2         , KC_F3         , KC_F4         , KC_F5         , MODE_REPORT  ,
     //               |               |               |               |               |               |              |
     //---------------.---------------.---------------.---------------.---------------.---------------.--------------.
     // VOLUME UP     |               | UP            |               |               |               | PREV TRACK   |
@@ -155,7 +155,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT_ergodox(
     //---------------.---------------.---------------.---------------.---------------.---------------.--------------.
     //               |               |               |               |               |               |              |
-       KC_TRNS       , QNTM_1        , QNTM_2        , QNTM_3        , QNTM_4       , KC_TRNS       , KC_TRNS      ,
+       KC_TRNS       , QNTM_1        , QNTM_2        , QNTM_3        , QNTM_4        , KC_TRNS       , MODE_TOGGLE  ,
     //               |               |               |               |               |               |              |
     //---------------.---------------.---------------.---------------.---------------.---------------.--------------.
     //               |               |               |               |               |               |              |
