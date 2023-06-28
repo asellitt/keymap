@@ -6,4 +6,4 @@ cd ~/src/qmk_firmware
 ./util/qmk_install.sh
 make git-submodule
 
-ln -sF ~/src/ergodox-keymap ~/src/qmk_firmware/keyboards/ergodox_ez/keymaps/asellitt
+ln -sF ~/src/keymap/ergodox ~/src/qmk_firmware/keyboards/ergodox_ez/keymaps/asellitt
