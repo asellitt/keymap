@@ -4,12 +4,22 @@
 
 To be uploaded via the Vial utility. See: [Vial](https://get.vial.today/download/)
 
+### Compile
+
+Requires nodejs.
+
+Run:
+
+```sh
+adam/script/compile.js
+```
+
 #### Upload
 
 Via UI:
 
 ```
-File -> Load Saved Layout -> keymap/adam/layout.vil
+File -> Load Saved Layout -> adam/adam_asellitt.vil
 ```
 
 #### Backup
@@ -17,7 +27,7 @@ File -> Load Saved Layout -> keymap/adam/layout.vil
 Via UI:
 
 ```
-File -> Save Current Layout -> keymap/adam/layout.vil
+File -> Save Current Layout -> adam/layout/layout.vil
 ```
 
 ---
