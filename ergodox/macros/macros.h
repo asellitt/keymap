@@ -1,4 +1,4 @@
-#include "quantum.h"
+#include "secret"
 
 #define KC_MAC_UNDO LGUI(KC_Z)
 #define KC_MAC_CUT LGUI(KC_X)
