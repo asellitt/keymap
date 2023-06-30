@@ -1,25 +1,32 @@
 #! /usr/bin/env node
 
+const fs = require("node:fs");
+const readline = require("node:readline");
+const path = require("node:path");
+
 const resolvePath = (filename) => {
-  resolve = require("path").resolve;
-  return resolve(`${__dirname}/${filename}`);
+  return path.resolve(`${__dirname}/${filename}`);
 };
 
 const loadLayout = (filename) => {
   console.log(`Loading layout: ${filename}`);
-  var readFile = require("fs").readFileSync;
-  var layout = resolvePath(`../layout/${filename}`);
+  var layoutFile = resolvePath(`../layout/${filename}`);
 
-  return JSON.parse(readFile(layout, "utf8"));
+  var layoutContent = fs.readFileSync(layoutFile, "utf8");
+  var layoutJson = layoutContent
+    .split("\n")
+    .filter((l) => !l.trim().startsWith("//"))
+    .join("");
+
+  return JSON.parse(layoutJson);
 };
 
 const saveLayout = (layout, filename) => {
   console.log(`Saving layout: ${filename}`);
-  var writeFile = require("fs").writeFileSync;
   var filename = resolvePath(`../${filename}`);
   var json = JSON.stringify(layout);
 
-  return writeFile(filename, json);
+  return fs.writeFileSync(filename, json);
 };
 
 const raiseError = (message) => {
@@ -29,6 +36,14 @@ const raiseError = (message) => {
 
 const mergeLayouts = (base, merge) => {
   console.log("Merging layouts ...");
+
+  // merge layouts
+  console.log("... merging layouts");
+  var totalLayouts = merge.layout.length + base.layout.length;
+  if (totalLayouts > 4) {
+    raiseError(`Error (Too Many Layouts): Adam supports up to 4 layouts. There are ${totalLayouts} in this layout.`);
+  }
+  merge.layout.forEach((layout) => base.layout.push(layout));
 
   // merge macros
   console.log("... merging macros");
@@ -51,4 +66,5 @@ try {
   console.log("Layout compiled");
 } catch (err) {
   console.log("Could not compile layout");
+  console.error(err);
 }
