@@ -9,6 +9,7 @@ enum {
   M_DEVCC,
   M_GMUTE,
   M_GHAPPROVE,
+  M_JAVAPROC,
   QNTM_1,
   QNTM_2,
   QNTM_3,
@@ -118,6 +119,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case M_GHAPPROVE:
       if (record->event.pressed) MACRO_GITHUB_APPROVE;
+      break;
+    case M_JAVAPROC:
+      if (record->event.pressed) MACRO_JAVA_PROC;
       break;
   }
   return true;
