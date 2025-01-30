@@ -10,6 +10,7 @@ enum {
   M_GMUTE,
   M_GHAPPROVE,
   M_JAVAPROC,
+  M_ZORRO,
   QNTM_1,
   QNTM_2,
   QNTM_3,
@@ -122,6 +123,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case M_JAVAPROC:
       if (record->event.pressed) MACRO_JAVA_PROC;
+      break;
+    case M_ZORRO:
+      if (record->event.pressed) MACRO_ZORRO;
       break;
   }
   return true;

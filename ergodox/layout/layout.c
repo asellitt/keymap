@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //               |               |               |               |               |               | STOP         |
     //---------------.---------------.---------------.---------------.---------------.---------------|              |
     // VOLUME DOWN   |               |               |               |               |               |              |
-       KC_VOLD       , KC_TRNS       , KC_TRNS       , KC_TRNS       , KC_TRNS       , KC_TRNS       , KC_MSTP      ,
+       KC_VOLD       , M_ZORRO       , KC_TRNS       , KC_TRNS       , KC_TRNS       , KC_TRNS       , KC_MSTP      ,
     //               |               |               |               |               |               |              |
     //---------------.---------------.---------------.---------------.---------------.---------------.--------------.
     //               |               |               |               |               |
