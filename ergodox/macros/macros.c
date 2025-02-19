@@ -8,6 +8,7 @@ enum {
   M_ROCKET,
   M_DEVCC,
   M_GMUTE,
+  M_HIDE,
   M_GHAPPROVE,
   M_JAVAPROC,
   M_ZORRO,
@@ -117,6 +118,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case M_GMUTE:
       if (record->event.pressed) MACRO_GLOBAL_MUTE;
+      break;
+    case M_HIDE:
+      if (record->event.pressed) MACRO_IDE_HIDE;
       break;
     case M_GHAPPROVE:
       if (record->event.pressed) MACRO_GITHUB_APPROVE;

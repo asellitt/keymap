@@ -20,8 +20,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_LSFT       , KC_Z          , KC_X          , KC_C          , KC_V          , KC_B          , M_JAVAPROC   ,
     //               |               |               |               |               |               |              |
     //---------------.---------------.---------------.---------------.---------------.---------------.--------------.
-    // LAYER 1       |               | LEFT          | RIGHT         | GUI           |
-       MO(1)         , KC_TRNS       , KC_LEFT       , KC_RGHT       , MODE_GUI      ,
+    // LAYER 1       | IDE HIDE      | LEFT          | RIGHT         | GUI           |
+       MO(1)         , M_HIDE        , KC_LEFT       , KC_RGHT       , MODE_GUI      ,
     //               |               |               |               |               |
     //---------------.---------------.---------------.---------------.---------------.
     //                                                                               .---------------.--------------.
