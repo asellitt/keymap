@@ -1,7 +1,7 @@
 #include "macros.h"
 
 enum {
-  MODE_TOGGLE = EZ_SAFE_RANGE,
+  MODE_TOGGLE = SAFE_RANGE,
   MODE_REPORT,
   MODE_CTRL,
   MODE_GUI,
