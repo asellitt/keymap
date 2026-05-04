@@ -3,7 +3,7 @@ static tap c_copy_state = {
   .state           = 0
 };
 
-void c_copy_finished(qk_tap_dance_state_t *state, void *user_data) {
+void c_copy_finished(tap_dance_state_t *state, void *user_data) {
   c_copy_state.state = current_dance(state);
   switch (c_copy_state.state) {
     case SINGLE_TAP:
@@ -16,7 +16,7 @@ void c_copy_finished(qk_tap_dance_state_t *state, void *user_data) {
   }
 }
 
-void c_copy_reset(qk_tap_dance_state_t *state, void *user_data) {
+void c_copy_reset(tap_dance_state_t *state, void *user_data) {
   switch (c_copy_state.state) {
     case SINGLE_TAP:
       unregister_code(KC_C);

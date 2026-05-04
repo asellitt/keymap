@@ -3,7 +3,7 @@ static tap triple_equal_state = {
   .state           = 0
 };
 
-void triple_equal_finished(qk_tap_dance_state_t *state, void *user_data) {
+void triple_equal_finished(tap_dance_state_t *state, void *user_data) {
   triple_equal_state.state = current_dance(state);
   switch (triple_equal_state.state) {
     case SINGLE_TAP:
@@ -20,7 +20,7 @@ void triple_equal_finished(qk_tap_dance_state_t *state, void *user_data) {
   }
 }
 
-void triple_equal_reset(qk_tap_dance_state_t *state, void *user_data) {
+void triple_equal_reset(tap_dance_state_t *state, void *user_data) {
   switch (triple_equal_state.state) {
     case SINGLE_TAP:
       unregister_code(KC_EQL);

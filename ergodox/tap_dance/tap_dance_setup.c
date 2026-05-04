@@ -49,7 +49,7 @@ enum {
  *  is not fully tested
  *
  */
-int current_dance(qk_tap_dance_state_t *state) {
+int current_dance(tap_dance_state_t *state) {
   int current_state = 0;
   if (state->count == 1) {
     if (state->interrupted || !state->pressed) {

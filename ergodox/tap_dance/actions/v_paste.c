@@ -3,7 +3,7 @@ static tap v_paste_state = {
   .state           = 0
 };
 
-void v_paste_finished(qk_tap_dance_state_t *state, void *user_data) {
+void v_paste_finished(tap_dance_state_t *state, void *user_data) {
   v_paste_state.state = current_dance(state);
   switch (v_paste_state.state) {
     case SINGLE_TAP:
@@ -16,7 +16,7 @@ void v_paste_finished(qk_tap_dance_state_t *state, void *user_data) {
   }
 }
 
-void v_paste_reset(qk_tap_dance_state_t *state, void *user_data) {
+void v_paste_reset(tap_dance_state_t *state, void *user_data) {
   switch (v_paste_state.state) {
     case SINGLE_TAP:
       unregister_code(KC_V);

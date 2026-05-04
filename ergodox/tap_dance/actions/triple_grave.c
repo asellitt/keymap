@@ -3,7 +3,7 @@ static tap triple_grave_state = {
   .state           = 0
 };
 
-void triple_grave_finished(qk_tap_dance_state_t *state, void *user_data) {
+void triple_grave_finished(tap_dance_state_t *state, void *user_data) {
   triple_grave_state.state = current_dance(state);
   switch (triple_grave_state.state) {
     case SINGLE_TAP:
@@ -16,7 +16,7 @@ void triple_grave_finished(qk_tap_dance_state_t *state, void *user_data) {
   }
 }
 
-void triple_grave_reset(qk_tap_dance_state_t *state, void *user_data) {
+void triple_grave_reset(tap_dance_state_t *state, void *user_data) {
   switch (triple_grave_state.state) {
     case SINGLE_TAP:
       unregister_code(KC_GRV);
