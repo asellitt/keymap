@@ -9,8 +9,8 @@ enum {
   M_DEVCC,
   M_GMUTE,
   M_GTTS,
+  M_GAUDIO,
   M_HIDE,
-  M_GHAPPROVE,
   M_JAVAPROC,
   M_ZORRO,
   QNTM_1,
@@ -123,11 +123,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_GTTS:
       if (record->event.pressed) MACRO_GLOBAL_TTS;
       break;
+    case M_GAUDIO:
+      if (record->event.pressed) MACRO_GLOBAL_AUDIO_TOGGLE;
+      break;
     case M_HIDE:
       if (record->event.pressed) MACRO_IDE_HIDE;
-      break;
-    case M_GHAPPROVE:
-      if (record->event.pressed) MACRO_GITHUB_APPROVE;
       break;
     case M_JAVAPROC:
       if (record->event.pressed) MACRO_JAVA_PROC;

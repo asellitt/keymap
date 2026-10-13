@@ -118,8 +118,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        M_DEVCC      , KC_F6         , KC_F7         , KC_F8         , KC_F9         , KC_F10        , M_GTTS        ,
     //              |               |               |               |               |               |               |
     //--------------.---------------.---------------.---------------.---------------.---------------.---------------.
-    // NEXT TRACK   | MOUSE WH UP   | MOUSE UP      | MOUSE WH DOWN |               |               |               |
-       KC_MNXT      , KC_WH_U       , KC_MS_U       , KC_WH_D       , KC_TRNS       , KC_TRNS       , KC_TRNS       ,
+    // NEXT TRACK   | MOUSE WH UP   | MOUSE UP      | MOUSE WH DOWN |               |               | GLOBAL AUDIO  |
+       KC_MNXT      , KC_WH_U       , KC_MS_U       , KC_WH_D       , KC_TRNS       , KC_TRNS       , M_GAUDIO      ,
     //              |               |               |               |               |               |               |
     //              .---------------|---------------.---------------.---------------.---------------.---------------.
     //______________| MOUSE LEFT    | MOUSE DOWN    | MOUSE RIGHT   |               |               | LAYER 2       |
