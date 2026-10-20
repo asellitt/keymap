@@ -10,6 +10,7 @@ enum {
   M_GMUTE,
   M_GTTS,
   M_GAUDIO,
+  M_GVID,
   M_HIDE,
   M_JAVAPROC,
   M_ZORRO,
@@ -125,6 +126,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case M_GAUDIO:
       if (record->event.pressed) MACRO_GLOBAL_AUDIO_TOGGLE;
+      break;
+    case M_GVID:
+      if (record->event.pressed) MACRO_GLOBAL_VIDEO_TOGGLE;
       break;
     case M_HIDE:
       if (record->event.pressed) MACRO_IDE_HIDE;

@@ -127,7 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // PLAY/PAUSE   |               |               |               |               |               |               |
     //              .---------------|---------------.---------------.---------------.---------------.---------------.
     //              | MOUSE CLK LEFT|MOUSE CLK MIDDL|MOUSE CLK RIGHT|               |               |               |
-       KC_MPLY      , KC_BTN1       , KC_BTN3       , KC_BTN2       , KC_TRNS       , KC_TRNS       , KC_TRNS       ,
+       KC_MPLY      , KC_BTN1       , KC_BTN3       , KC_BTN2       , KC_TRNS       , KC_TRNS       , M_GVID        ,
     //              |               |               |               |               |               |               |
     //--------------.---------------.---------------.---------------.---------------.---------------.---------------.
     //                              |               |               |               |               |               |
