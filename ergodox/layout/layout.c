@@ -79,8 +79,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   [1] = LAYOUT_ergodox(
     //---------------.---------------.---------------.---------------.---------------.---------------.--------------.
-    // GLOBAL MUTE   | F1            | F2            | F3            | F4            | F5            |              |
-       M_GMUTE       , KC_F1         , KC_F2         , KC_F3         , KC_F4         , KC_F5         , MODE_REPORT  ,
+    // GLOBAL AUDIO  | F1            | F2            | F3            | F4            | F5            |              |
+       M_GAUDIO      , KC_F1         , KC_F2         , KC_F3         , KC_F4         , KC_F5         , MODE_REPORT  ,
     //               |               |               |               |               |               |              |
     //---------------.---------------.---------------.---------------.---------------.---------------.--------------.
     // VOLUME UP     |               | UP            |               |               |               | PREV TRACK   |
@@ -95,8 +95,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_VOLD       , M_ZORRO       , KC_TRNS       , KC_TRNS       , KC_TRNS       , KC_TRNS       , KC_MSTP      ,
     //               |               |               |               |               |               |              |
     //---------------.---------------.---------------.---------------.---------------.---------------.--------------.
-    //               |               |               |               |               |
-       KC_TRNS       , KC_TRNS       , KC_TRNS       , KC_TRNS       , KC_TRNS       ,
+    //               | GLOBAL MUTE   |               |               |               |
+       KC_TRNS       , M_GMUTE       , KC_TRNS       , KC_TRNS       , KC_TRNS       ,
     //               |               |               |               |               |
     //---------------.---------------.---------------.---------------.---------------.
     //                                                                               .---------------.--------------.
@@ -118,8 +118,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        M_DEVCC      , KC_F6         , KC_F7         , KC_F8         , KC_F9         , KC_F10        , M_GTTS        ,
     //              |               |               |               |               |               |               |
     //--------------.---------------.---------------.---------------.---------------.---------------.---------------.
-    // NEXT TRACK   | MOUSE WH UP   | MOUSE UP      | MOUSE WH DOWN |               |               | GLOBAL AUDIO  |
-       KC_MNXT      , KC_WH_U       , KC_MS_U       , KC_WH_D       , KC_TRNS       , KC_TRNS       , M_GAUDIO      ,
+    // NEXT TRACK   | MOUSE WH UP   | MOUSE UP      | MOUSE WH DOWN |               |               |               |
+       KC_MNXT      , KC_WH_U       , KC_MS_U       , KC_WH_D       , KC_TRNS       , KC_TRNS       , KC_TRNS       ,
     //              |               |               |               |               |               |               |
     //              .---------------|---------------.---------------.---------------.---------------.---------------.
     //______________| MOUSE LEFT    | MOUSE DOWN    | MOUSE RIGHT   |               |               | LAYER 2       |
@@ -127,11 +127,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // PLAY/PAUSE   |               |               |               |               |               |               |
     //              .---------------|---------------.---------------.---------------.---------------.---------------.
     //              | MOUSE CLK LEFT|MOUSE CLK MIDDL|MOUSE CLK RIGHT|               |               |               |
-       KC_MPLY      , KC_BTN1       , KC_BTN3       , KC_BTN2       , KC_TRNS       , KC_TRNS       , M_GVID        ,
+       KC_MPLY      , KC_BTN1       , KC_BTN3       , KC_BTN2       , KC_TRNS       , KC_TRNS       , KC_TRNS      ,
     //              |               |               |               |               |               |               |
     //--------------.---------------.---------------.---------------.---------------.---------------.---------------.
-    //                              |               |               |               |               |               |
-                                      KC_TRNS       , KC_TRNS       , KC_TRNS       , KC_TRNS       , KC_TRNS       ,
+    //                              |               |               |               | GLOBAL VIDEO  |               |
+                                      KC_TRNS       , KC_TRNS       , KC_TRNS       , M_GVID        , KC_TRNS       ,
     //                              |               |               |               |               |               |
     //                              .---------------.---------------.---------------.---------------.---------------.
     //--------------.---------------.
